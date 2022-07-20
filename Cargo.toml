@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 fp-evm = { version = "3.0.0-dev", git = "https://github.com/paritytech/frontier", rev = "cb041f1e" }
+pallet-evm-precompile-blake2 = { version = "2.0.0-dev", git = "https://github.com/paritytech/frontier", rev = "cb041f1e" }
 pallet-evm-precompile-bn128 = { version = "2.0.0-dev", git = "https://github.com/paritytech/frontier", rev = "cb041f1e" }
 pallet-evm-precompile-curve25519 = { version = "1.0.0-dev", git = "https://github.com/paritytech/frontier", rev = "cb041f1e" }
 pallet-evm-precompile-modexp = { version = "2.0.0-dev", git = "https://github.com/paritytech/frontier", rev = "cb041f1e" }

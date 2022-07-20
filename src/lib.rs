@@ -2,6 +2,7 @@ use fp_evm::{
     Context, ExitError, ExitReason, ExitSucceed, LinearCostPrecompile, Precompile,
     PrecompileFailure, PrecompileHandle, PrecompileOutput, PrecompileResult, Transfer,
 };
+use pallet_evm_precompile_blake2::Blake2F;
 use pallet_evm_precompile_bn128::{Bn128Add, Bn128Mul, Bn128Pairing};
 use pallet_evm_precompile_modexp::Modexp;
 use pallet_evm_precompile_simple::{ECRecover, Identity, Ripemd160, Sha256};
@@ -21,6 +22,7 @@ pub fn execute_precompiled(address: &Address, input: &[u8]) -> Vec<u8> {
         0x06 => extract_result(Bn128Add::execute(&mut DummyHandler { input })),
         0x07 => extract_result(Bn128Mul::execute(&mut DummyHandler { input })),
         0x08 => extract_result(Bn128Pairing::execute(&mut DummyHandler { input })),
+        0x09 => extract_result(Blake2F::execute(&mut DummyHandler { input })),
         _ => panic!("calling non-exist precompiled contract address"),
     }
 }
