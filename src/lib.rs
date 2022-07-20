@@ -79,14 +79,14 @@ impl<'a> PrecompileHandle for DummyHandler<'a> {
 
     fn log(
         &mut self,
-        _: Address,
+        _: primitive_types::H160,
         _: Vec<primitive_types::H256>,
         _: Vec<u8>,
     ) -> Result<(), ExitError> {
         Ok(())
     }
 
-    fn code_address(&self) -> Address {
+    fn code_address(&self) -> primitive_types::H160 {
         unreachable!("we don't use this")
     }
 
